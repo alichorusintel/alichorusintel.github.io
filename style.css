@@ -14,6 +14,15 @@ header {
     text-align: center;
 }
 
+/* Style for the header image */
+.header-image {
+    max-width: 150px;
+    /* Adjust this to control the size of the image */
+    height: auto;
+    margin-bottom: 10px;
+    /* Adds space between the image and the navigation */
+}
+
 header nav ul {
     list-style-type: none;
 }
