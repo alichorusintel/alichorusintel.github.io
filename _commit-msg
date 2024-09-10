@@ -1,0 +1,13 @@
+#!/bin/sh
+# This hook will make sure that the commit message contains a JIRA issue.
+#
+# To enable this hook, rename this file to ".git/hooks/commit-msg".
+# Make sure to add execution permissions to the file.
+
+commit_regex="([A-Z]+-[0-9]+)"
+error_msg="Aborting commit. Your commit message is missing a JIRA Issue ('CHR-1111') "
+
+if ! grep -iqE "$commit_regex" "$1"; then
+    echo "$error_msg" >&2
+    exit 1
+fi
